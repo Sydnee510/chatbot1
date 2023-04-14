@@ -2,79 +2,79 @@
 <html>
   <head>
     <title>Printing Apparel Chatbot</title>
-    <style>
-      /* Add any custom CSS styles here */
-    </style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
   </head>
   <body>
-    <div id="chat-container">
-      <div id="chat-header">
-        <h2>Printing Apparel Chatbot</h2>
-      </div>
-      <div id="chat-log">
-        <!-- This is where the chat conversation will appear -->
-      </div>
-      <div id="chat-input">
-        <form id="chat-form">
-          <input type="text" id="user-input" placeholder="Type your message here...">
-          <button type="submit">Send</button>
-        </form>
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+      <div class="chatbot-container">
+        <!-- your chatbot HTML code here -->
+        <div id="chat-header">
+          <h2>Printing Apparel Chatbot</h2>
+        </div>
+        <div id="chat-log">
+          <!-- This is where the chat conversation will appear -->
+        </div>
+        <div id="chat-input">
+          <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your message here...">
+            <button type="submit">Send</button>
+          </form>
+        </div>
       </div>
     </div>
     <script>
       // Add any JavaScript code here
+      // ...
       // Select elements
-// Select elements
-const chatForm = document.querySelector('#chat-form');
-const chatInput = document.querySelector('#user-input');
-const chatLog = document.querySelector('#chat-log');
+      const chatForm = document.querySelector('#chat-form');
+      const chatInput = document.querySelector('#user-input');
+      const chatLog = document.querySelector('#chat-log');
 
-// Define chatbot messages
-const chatbotMessages = [
-  'Hi there! How can I help you today?',
-  'What kind of printing apparel are you looking for?',
-  'Our most popular items are t-shirts and hoodies. Would you like to see some examples?',
-  'Sure, here are some links to our best-selling items: [link 1], [link 2], [link 3]',
-  'Great! Let me know if you have any other questions.'
-];
+      // Define chatbot messages
+      const chatbotMessages = [
+        'Hi there! How can I help you today?',
+        'What kind of printing apparel are you looking for?',
+        'Our most popular items are t-shirts and hoodies. Would you like to see some examples?',
+        'Sure, here are some links to our best-selling items: [link 1], [link 2], [link 3]',
+        'Great! Let me know if you have any other questions.'
+      ];
 
-// Define function to add chat bubble to log
-function addChatBubble(message, sender) {
-  const bubbleDiv = document.createElement('div');
-  bubbleDiv.classList.add('chat-bubble');
-  if (sender === 'user') {
-    bubbleDiv.classList.add('user-bubble');
-  } else {
-    bubbleDiv.classList.add('chatbot-bubble');
-  }
-  bubbleDiv.innerText = message;
-  chatLog.appendChild(bubbleDiv);
-}
+      // Define function to add chat bubble to log
+      function addChatBubble(message, sender) {
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.classList.add('chat-bubble');
+        if (sender === 'user') {
+          bubbleDiv.classList.add('user-bubble');
+        } else {
+          bubbleDiv.classList.add('chatbot-bubble');
+        }
+        bubbleDiv.innerText = message;
+        chatLog.appendChild(bubbleDiv);
+      }
 
-// Define function to handle chatbot response
-function chatbotResponse(message) {
-  let response;
-  if (message.includes('t-shirt') || message.includes('hoodie')) {
-    response = chatbotMessages[3];
-  } else {
-    response = chatbotMessages[Math.floor(Math.random() * chatbotMessages.length)];
-  }
-  return response;
-}
+      // Define function to handle chatbot response
+      function chatbotResponse(message) {
+        let response;
+        if (message.includes('t-shirt') || message.includes('hoodie')) {
+          response = chatbotMessages[3];
+        } else {
+          response = chatbotMessages[Math.floor(Math.random() * chatbotMessages.length)];
+        }
+        return response;
+      }
 
-// Define function to handle form submit
-function handleSubmit(e) {
-  e.preventDefault();
-  const userInput = chatInput.value;
-  addChatBubble(userInput, 'user');
-  chatInput.value = '';
-  const chatbotResponseMessage = chatbotResponse(userInput);
-  addChatBubble(chatbotResponseMessage, 'chatbot');
-}
+      // Define function to handle form submit
+      function handleSubmit(e) {
+        e.preventDefault();
+        const userInput = chatInput.value;
+        addChatBubble(userInput, 'user');
+        chatInput.value = '';
+        const chatbotResponseMessage = chatbotResponse(userInput);
+        addChatBubble(chatbotResponseMessage, 'chatbot');
+      }
 
-// Add event listener for form submit
-chatForm.addEventListener('submit', handleSubmit);
-
+      // Add event listener for form submit
+      chatForm.addEventListener('submit', handleSubmit);
 
     </script>
   </body>
