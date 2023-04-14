@@ -34,6 +34,7 @@
       const chatbotMessages = [
         'Hi there! How can I help you today?',
         'What kind of printing apparel are you looking for?',
+        'We offer Screen Printing, Heat Transfers, White Toner, and DTG',
         'Our most popular items are t-shirts and hoodies. Would you like to see some examples?',
         'Sure, here are some links to our best-selling items: [link 1], [link 2], [link 3]',
         'Great! Let me know if you have any other questions.'
@@ -57,7 +58,26 @@
         let response;
         if (message.includes('t-shirt') || message.includes('hoodie')) {
           response = chatbotMessages[3];
-        } else {
+        }
+        if (message.includes('hello') || message.includes('how are you')) {
+          response = chatbotMessages[0];
+        }
+        if (message.includes('printing') || message.includes('printed')) {
+          response = chatbotMessages[1];
+        }
+        if (message.includes('services') || message.includes('offer')) {
+          response = chatbotMessages[2];
+        }
+        if (message.includes('what kind') || message.includes('type')) {
+          response = chatbotMessages[3];
+        }
+        if (message.includes('show') || message.includes('examples')) {
+          response = chatbotMessages[4];
+        }
+        if (message.includes('thank you') || message.includes('thats it')) {
+          response = chatbotMessages[5];
+        }
+        else {
           response = chatbotMessages[Math.floor(Math.random() * chatbotMessages.length)];
         }
         return response;
