@@ -1,89 +1,91 @@
-/* Reset default styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Style the chat container */
-  #chat-container {
-    max-width: 400px;
-    margin: 0 auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Style the chat header */
-  #chat-header {
-    background-color: #0077c2;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  /* Style the chat log */
-  #chat-log {
-    padding: 10px;
-    height: 300px;
-    overflow-y: scroll;
-  }
-  
-  /* Style the chat input */
-  #chat-input {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #f7f7f7;
-  }
-  
-  /* Style the chat input field */
-  #user-input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    background-color: #fff;
-  }
-  
-  /* Style the chat input submit button */
-  #chat-form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #0077c2;
-    cursor: pointer;
-  }
-  
-  /* Style the chat bubbles */
-  .chat-bubble {
-    display: inline-block;
-    max-width: 70%;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Style the user chat bubbles */
-  .user-bubble {
-    background-color: #0077c2;
-    color: #fff;
-    text-align: right;
-  }
-  
-  /* Style the chatbot chat bubbles */
-  .chatbot-bubble {
-    background-color: #f7f7f7;
-    color: #333;
-    text-align: left;
-  }
-  
+/* Chatbot container styling */
+.chatbot-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  margin: auto;
+  overflow: hidden;
+  width: 80%;
+  max-width: 500px;
+}
+
+/* Chat header styling */
+#chat-header {
+  background-color: #007aff;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 60px;
+}
+
+/* Chat log styling */
+#chat-log {
+  background-color: #f2f2f2;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+/* Chat input styling */
+#chat-input {
+  background-color: #f2f2f2;
+  border-top: 1px solid #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+/* User input styling */
+#user-input {
+  border-radius: 20px;
+  border: none;
+  flex-grow: 1;
+  font-size: 16px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 300px;
+}  
+
+
+
+/* Send button styling */
+#chat-form button {
+  background-color: #007aff;
+  border-radius: 50%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Chat bubble styling */
+.chat-bubble {
+  background-color: #007aff;
+  border-radius: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+  max-width: 80%;
+  padding: 10px;
+  word-wrap: break-word;
+}
+
+/* User chat bubble styling */
+.user-bubble {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Chatbot chat bubble styling */
+.chatbot-bubble {
+  background-color: #007aff;
+  color: #fff;
+}
+
